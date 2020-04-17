@@ -1,14 +1,17 @@
+using System;
 class Matrix
 {
     public static int[,] Square(int[,] myMatrix)
     {
-        int index = 0;
-        int width = myMatrix.GetUpperBound(0) + 1;
-        int[,] ret = new int[myMatrix.GetUpperBound(0) + 1, myMatrix.GetUpperBound(1) + 1];
-        foreach (int val in myMatrix) {
-            ret[index / width, index % width] = val * val;
-            index++;
+        int[,] newMatrix = new int[myMatrix.GetLength(0),myMatrix.GetLength(1)];
+
+        for (int i = 0; i < myMatrix.GetLength(0); i++)
+        {
+            for (int j = 0; j < myMatrix.GetLength(1); j++)
+            {
+                newMatrix[i,j] = myMatrix[i,j] * myMatrix[i,j];
+            }
         }
-        return ret;
+        return newMatrix;
     }
 }

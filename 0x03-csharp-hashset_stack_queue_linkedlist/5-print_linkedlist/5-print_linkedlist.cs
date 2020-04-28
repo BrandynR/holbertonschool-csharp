@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 
+
 class List
 {
 	public static LinkedList<int> CreatePrint(int size)

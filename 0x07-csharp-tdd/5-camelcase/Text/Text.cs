@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace Text
 {
-    ///<summary>operations class</summary>
+    ///<summary>class Str</summary>
     public class Str
     {
-        ///<summary>returns the max integer in a list of integers</summary>
+        ///<summary>determines how many words are in a string with Upper Case letter</summary>
         public static int CamelCase(string s)
         {
             int count = 1;

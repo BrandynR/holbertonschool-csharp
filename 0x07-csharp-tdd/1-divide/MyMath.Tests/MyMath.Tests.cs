@@ -18,7 +18,7 @@ namespace Tests
 		}
 		///matrix test
 		[Test]
-		public void Divide_Zero()
+		public void Test2()
 		{
 			int[,] matrix = new int[2, 2] { { 8, 2 }, { 2, 6 } };
 			int num = 0;
@@ -30,7 +30,7 @@ namespace Tests
 		
 	   ///matrix test
       [Test]
-		public void Test2()
+		public void Test3()
 		{
 			int[,] matrix = new int[2, 2] { { 8, 4 }, { 4, 10 } };
 			int num = 2;
@@ -38,6 +38,17 @@ namespace Tests
 			int[,] output = MyMath.Matrix.Divide(matrix, num);
 
 			Assert.AreEqual(new int[2, 2] { { 4, 2 }, { 2, 5 } }, output);
+		}
+		///matrix test
+		[Test]
+		public void Test4()
+		{
+			int[,] matrix = null;
+			int num = 2;
+
+			int[,] output = MyMath.Matrix.Divide(matrix, num);
+
+			Assert.AreEqual(null, output);
 		}
     }
 }

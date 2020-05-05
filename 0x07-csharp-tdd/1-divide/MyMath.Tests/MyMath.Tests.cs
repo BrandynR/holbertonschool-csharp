@@ -35,15 +35,5 @@ namespace MyMath.Tests
 
 			Assert.AreEqual(new int[2, 2] { { 3, 1 }, { 1, 2 } }, output);
 		}
-		[Test]
-		public void Test4()
-		{
-			int[,] matrix = new int[2, 2] { { 9, 3 }, { 6, 12 } };
-			int num = 0;
-			
-			int[,] output = Matrix.Divide(matrix,num);
-			
-			Assert.AreEqual(null, Matrix.Divide(matrix, num));
-		}
 	}
 }

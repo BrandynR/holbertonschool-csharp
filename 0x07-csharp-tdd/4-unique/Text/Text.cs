@@ -7,24 +7,20 @@ namespace Text
 	{
 		///<summary>method that returns the index of the first non-repeating character of a string</summary>
 		public static int UniqueChar(string s)
-		{
-			if (s == "")
-			{
-				return (-1);
-			}
-
-			char x = s[0];
-            var sizing =  s.Length;
-            int index = 0;
-			for (; index < sizing; index++)
-			{
-				if (s[index] != x)
-				{
-					return index;
-				}
-				x = s[index];
-			}
-			return (-1);
-		}
-	}
+        {
+            int ch = 256, idx = -1, i;
+            char[] count = new char[ch];
+            for (i = 0; i < s.Length; i++)
+                count[s[i]]++;
+            for (i = 0; i < s.Length; i++)
+            {
+                if (count[s[i]] == 1)
+                {
+                    idx = i;
+                    break;
+                }
+            }
+            return idx;
+        }
+    }
 }

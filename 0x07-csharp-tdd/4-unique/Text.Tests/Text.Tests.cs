@@ -8,16 +8,16 @@ namespace Text.Tests
         public void Test1()
         {
             string str = "";
-            int res = Str.UniqueChar(str);
-            Assert.AreEqual(-1, res);
+            int unique = Str.UniqueChar(str);
+            Assert.AreEqual(-1, unique);
         }
 		///tests single character string
 		[Test]
         public void Test2()
         {
             string str = "s";
-            int res = Str.UniqueChar(str);
-            Assert.AreEqual(0, res);
+            int unique = Str.UniqueChar(str);
+            Assert.AreEqual(0, unique);
         }
         ///blank test
 		[Test]
@@ -30,32 +30,32 @@ namespace Text.Tests
         public void Test4()
         {
             string str = "dad";
-            int res = Str.UniqueChar(str);
-            Assert.AreEqual(1, res);
+            int unique = Str.UniqueChar(str);
+            Assert.AreEqual(1, unique);
         }
         ///tests no unique characters
 		[Test]
         public void Test5()
         {
             string str = "poop";
-            int res = Str.UniqueChar(str);
-            Assert.AreEqual(-1, res);
+            int unique = Str.UniqueChar(str);
+            Assert.AreEqual(-1, unique);
         }    
         ///tests first character as unique
         [Test]
         public void Test6()
         {
             string str = "gamma";
-            int res = Str.UniqueChar(str);
-            Assert.AreEqual(0, res);
+            int unique = Str.UniqueChar(str);
+            Assert.AreEqual(0, unique);
         }
 		///tests last character as unique 
         [Test]
         public void Test7()
         {
             string str = "mamas";
-            int res = Str.UniqueChar(str);
-            Assert.AreEqual(4, res);
+            int unique = Str.UniqueChar(str);
+            Assert.AreEqual(4, unique);
         }
     }
 }

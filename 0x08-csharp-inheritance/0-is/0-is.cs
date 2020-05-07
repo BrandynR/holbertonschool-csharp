@@ -1,8 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace _0_is
-{
-    public class Class1
+    /// <summary> Object class</summary>
+    class Obj
     {
+
+    /// <summary>method that returns True if the object is an int, otherwise return False</summary>
+  	///<returns>True or False</returns>
+    public static bool IsOfTypeInt(object obj)
+        {
+            return obj is int;
+        }
     }
-}

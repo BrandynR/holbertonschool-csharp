@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace _4_inherit
+///<summary>Base class</summary>
+class Animal
 {
-    public class Class1
-    {
-    }
+}
+
+///<summary>Class Dog, that inherits from Animal</summary>
+class Dog : Animal
+{
 }

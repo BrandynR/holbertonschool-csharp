@@ -2,25 +2,19 @@
 using System.Collections.Generic;
 using System.Reflection;
 
-
-    /// <summary> Object class</summary>
-    class Obj
-    {
-       ///<summary>method that prints the names of the available properties and methods of an object</summary>
-       ///<returns> All properties of an object</returns>
+/// <summary> Obj class </summary>
+class Obj
+{
+    /// <summary> Lists all methods and properties of an object </summary>
     public static void Print(object myObj)
-	{
-		TypeInfo idx = myObj.GetType().GetTypeInfo();
-		Console.WriteLine("{0} Properties:", idx.Name);
-		foreach (PropertyInfo prop in idx.GetProperties())
-		{
-			Console.WriteLine(prop.Name);
-		}
+    {
+        Type type = myObj.GetType();
 
-		Console.WriteLine("{0} Methods:", idx.Name);
-		foreach (MethodInfo metInfo in idx.GetMethods())
-		{
-			Console.WriteLine(metInfo.Name);
-		}
-	}
+        Console.WriteLine("{0} Properties:", type.Name);
+        foreach (var property in type.GetProperties())
+            Console.WriteLine(property.Name);
+        Console.WriteLine("{0} Methods:", type.Name);
+        foreach (var method in type.GetMethods())
+            Console.WriteLine(method.Name);
     }
+}

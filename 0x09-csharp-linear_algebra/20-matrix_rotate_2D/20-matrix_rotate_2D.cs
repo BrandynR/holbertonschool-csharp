@@ -8,14 +8,14 @@ class MatrixMath
 	
 	public static double[,] Rotate2D(double[,] matrix, double angle)
 	{
-		double[,] failMatrix = { { -1 } };
-		double[,] newMatrix = new double[2, 2];
-		double[,] rotateMatrix = { { Math.Cos(angle), Math.Sin(angle) }, { Math.Sin(angle) * -1, Math.Cos(angle) } };
+		double[,] fail = { { -1 } };
+		double[,] new = new double[2, 2];
+		double[,] rotate = { { Math.Cos(angle), Math.Sin(angle) }, { Math.Sin(angle) * -1, Math.Cos(angle) } };
 		int i, j, k;
 		double prod = 0;
 
 		if (matrix.GetLength(0) != 2 || matrix.GetLength(1) != 2)
-			return (failMatrix);
+			return (fail);
 
 		for (i = 0; i < 2; i++)
 		{
@@ -24,11 +24,11 @@ class MatrixMath
 				prod = 0;
 				for (k = 0; k < 2; k++)
 				{
-					prod += Math.Round(matrix[i, k] * rotateMatrix[k, j], 2);
+					prod += Math.Round(matrix[i, k] * rotate[k, j], 2);
 				}
-				newMatrix[i, j] = prod;
+				new[i, j] = prod;
 			}
 		}
-		return (newMatrix);
+		return (new);
 	}
 }

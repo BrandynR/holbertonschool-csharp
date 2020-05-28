@@ -17,7 +17,7 @@ class MatrixMath
 		double prod = 0;
 
 		if (matrix.GetLength(0) != 2 || matrix.GetLength(1) != 2)
-			return (failed);
+			return (fail);
 
 		if (direction == 'x')
 			shear = new double[,] { { 1, 0 }, { factor, 1 } };

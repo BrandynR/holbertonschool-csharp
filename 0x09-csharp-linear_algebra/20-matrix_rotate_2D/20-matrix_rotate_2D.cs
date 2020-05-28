@@ -1,11 +1,13 @@
 using System;
 
-///<summary>Class for matrix math</summary>
 class MatrixMath
 {
-	///<summary>method that rotates a square 2D matrix by a given angle in radians and returns the resulting matrix</summary>
-	///<return>the result matrix or matrix containing -1</return>
-	
+	/// <summary>
+	/// Rotates a 2x2 matrix by a given angle.
+	/// </summary>
+	/// <param name="matrix">The matrix to rotate.</param>
+	/// <param name="angle">The angle to rotate the matrix by.</param>
+	/// <returns>The new rotated, matrix, -1 on fail.</returns>
 	public static double[,] Rotate2D(double[,] matrix, double angle)
 	{
 		double[,] failMatrix = { { -1 } };
@@ -32,4 +34,3 @@ class MatrixMath
 		return (newMatrix);
 	}
 }
-

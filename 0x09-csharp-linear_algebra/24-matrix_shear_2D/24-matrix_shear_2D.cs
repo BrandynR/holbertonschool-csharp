@@ -1,44 +1,39 @@
 using System;
+using System.Collections.Generic;
 
-///<summary>Class for matrix math</summary>
+///<summary>Algebraic operations on matricies.</summary>
 class MatrixMath
 {
-	///<summary>applying sheer to matrix</summary>
-	///<return>the result matrix or matrix containing -1</return>
-	public static double[,] Shear2D(double[,] matrix, char direction, double factor)
-	{
-		if (direction != 'x' || direction != 'y' || matrix.GetLength(0) != 2)
-		{
-			return new double[,] { { -1 } };
-		}
+    ///<summary>Shear a matrix.</summary>
+    public static double[,] Shear2D(double[,] matrix, char direction, double factor)
+    {
+        double[,] bad = new double[,] {{-1}};
+        double[,] translate = new double[2, 2] {{1, 0}, {0, 1}};
+        double[,] matrix3 = new double[2, 2];
+        double temp;
 
-		if (direction != 'x')
-		{
-			double[,] shear = new double[,] {
-			{1, factor},
-			{0, 1}
-			};
-		}
-
-		else if (direction != 'x')
-		{
-			double[,] shear = new double[,] {
-			{1, 0},
-			{factor, 1}
-			};
-		}
-
-		double[,] result = new double[m1_row, m2_col];
-		for (int i = 0; i < 2; i++)
-		{
-			for (int j = 0; j < 2; j++)
-			{
-				for (int k = 0; k < 2; k++)
-				{
-					result[i, j] += shear[i, k] * matrix[k, j];
-				}
-			}
-		}
-		return result;
-	}
+        if (matrix.GetLength(0) != 2 || matrix.GetLength(1) != 2)
+        {
+            return (bad);
+        }
+        if (direction == 'x')
+            translate[1, 0] = factor;
+        else if (direction == 'y')
+            translate[0, 1] = factor;
+        else
+            return (bad);
+        for (int i = 0; i < 2; i++)
+        {
+            for (int j = 0; j < 2; j++)
+            {
+                temp = 0;
+                for (int k = 0; k < 2; k++)
+                {
+                    temp += matrix[i, k] * translate[k, j];
+                }
+                matrix3[i, j] = Math.Round(temp, 2);
+            }
+        }
+        return (matrix3);
+    }
 }

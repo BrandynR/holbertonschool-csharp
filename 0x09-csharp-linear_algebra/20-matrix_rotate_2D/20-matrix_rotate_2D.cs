@@ -26,7 +26,7 @@ class MatrixMath
 				prod = 0;
 				for (k = 0; k < 2; k++)
 				{
-					prod = Math.Round(prod + matrix[i, k] * matrix[k, j], 2);
+					prod = Math.Round(prod + (matrix[i, k] * matrix[k, j]), 2);
 				}
 				newMatrix[i, j] = prod;
 			}

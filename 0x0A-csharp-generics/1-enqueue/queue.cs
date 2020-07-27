@@ -1,51 +1,47 @@
 using System;
 
-///<summary>within Queue<T>, create a public class called Node</summary>
+
+/// <summary>within Queue T, create a public class called Node.</summary>
 class Queue<T>
 {
-	//Setting node for queues
-	public class Node
-	{
-		private T value = default(T);
-		public Node next = null;
+    public class Node
+{
+    public T value;
+    /// <summary>Pointer to the next node in our queue.</summary>
+    public Node next = null;
+       /// <summary>Creates a new node with given element as value for a new Node.</summary>
+    public Node(T value) {
+        this.value = value;
+    }
+}
+/// <summary>Pointer to head of queue.</summary>
+public Node head;
+/// <summary>Pointer to tail of queue.</summary>
+public Node tail;
 
-		public Node(T input)
-		{
-			value = input;
-		}
-	}
 
-	public Node head;
-	public Node tail;
-	public int count;
+/// <summary>Number of nodes in queue.</summary>
+public int count = 0;
 
-	///<summary>Add new node at the end</summary>
-	public void Enqueue(T value)
-	{
-		Node node = new Node(value);
-		if (head == null)
-		{
-			head = node;
-			tail = node;
-		}
-		else
-		{
-			tail.next = node;
-			tail = node;
-		}
-		count++;
-	}
+    /// <summary>Returns type of T parameter.</summary>
+    public Type CheckType() {
+        return typeof(T);
+    }
 
-	///<summary>Add new node at the end</summary>
-	public int Count()
-	{
-		return count;
-	}
+    /// <summary>Adds new element to the tail of the queue.</summary>
+       public void Enqueue(T value) {
+        Node node;
 
-	///<summary>Check if its a queue type</summary>
-	///<return>returns a Queue type</return>
-	public Type CheckType()
-	{
-		return typeof(T);
-	}
+        node = new Node(value);
+        if (this.head == null)
+            this.head = node;
+        if (this.tail != null)
+            this.tail.next = node;
+        this.tail = node;
+        this.count++;
+    }
+ /// <summary>Returns the number of nodes in the queue.</summary>
+    public int Count() {
+        return this.count;
+    }
 }

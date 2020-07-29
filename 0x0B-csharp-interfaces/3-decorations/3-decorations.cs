@@ -1,64 +1,70 @@
 using System;
 
 
-/// <summary>Simple abstract class.</summary>
+/// <summary>Abstract class.</summary>
 public abstract class Base
 {
-    /// <summary>Name of this object.</summary>
+    /// <summary>Name of this object</summary>
     public string name;
 
-    /// <summary>Show name and type of this object.</summary>
-    /// <returns>String containing object's name and type.</returns>
+    /// <summary>Show the name + type of this object</summary>
+    /// <returns>String containing object's name + type.</returns>
     public override string ToString() {
         return String.Format("{0} is a {1}", this.name, this.GetType().Name);
     }
 }
 
 
+/// <summary>Sample interface</summary>
 public interface IBreakable
 {
+    /// <summary>Durability of object, before breaking</summary>
     int durability { get; set; }
 
+    /// <summary>Break object as if it was damaged</summary>
     void Break();
 }
+
+/// <summary>Collectible object interface</summary>
 public interface ICollectable
 {
-    /// <summary>Whether this object is being carried or is still to be found.</summary>
+    /// <summary>If object is being carried, or is yet to be found</summary>
     bool isCollected { get; set; }
 
-    /// <summary>Act like this object has been picked up.</summary>
+    /// <summary>Act as though object has been picked up.</summary>
     void Collect();
 }
 
-/// <summary>Sample interface for interactable object.</summary>
+/// <summary>Interface for an interactable object</summary>
 public interface IInteractive
 {
-    /// <summary>Perform tdefault interaction with this object.</summary>
+    /// <summary>Perform interaction with object</summary>
     void Interact();
 }
 
 
-/// <summary>Openable door.</summary>
+/// <summary>Openable door</summary>
 public class Door : Base, IInteractive
 {
-    /// <summary>Creates a door with default name.</summary>
-    /// <param name="name">The name of this object.</param>
+    /// <summary>Create door with a default name</summary>
+    /// <param name="name">Name of this object</param>
     public Door(string name = "Door") {
         this.name = name;
     }
 
-    /// <summary>Try to open door.</summary>
+    /// <summary>Try to open door</summary>
     public void Interact() {
         Console.WriteLine("You try to open the {0}. It's locked.", this.name);
     }
 }
 
-/// <summary>Destructible decoration.</summary>
+/// <summary>A destructible decoration.</summary>
 public class Decoration : Base, IBreakable, IInteractive
 {
     /// <summary><see cref="IBreakable.durability"/></summary>
     public int durability { get; set; } = 1;
 
+    /// <summary>Whether this item is essential to game progression.</summary>
     public bool isQuestItem = false;
 
 
@@ -75,7 +81,7 @@ public class Decoration : Base, IBreakable, IInteractive
     }
 
 
-    /// <summary>Inspect item.</summary>
+    /// <summary>Inspect item</summary>
     public void Interact() {
         if (this.durability < 1)
             Console.WriteLine("The {0} has been broken.", this.name);
@@ -85,7 +91,7 @@ public class Decoration : Base, IBreakable, IInteractive
             Console.WriteLine("You look at the {0}. Not much to see here.", this.name);
     }
 
-    /// <summary>Damage item.</summary>
+    /// <summary>Damage item</summary>
     public void Break() {
         this.durability--;
         if (this.durability > 0)

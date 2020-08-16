@@ -1,0 +1,197 @@
+ls
+git add Builds/*
+git add -f Builds/*
+git commit -m"Pusing builds"
+git push
+git pull
+cd Builds/
+ls
+cd Windows/
+ls
+cd Windows/
+ls
+cd ..
+cd ..
+ls
+cd Windows/
+ls
+rm -r MonoBleedingEdge/
+ls
+cd Platformer
+cd Windows/
+ls
+cd Platformer
+cd ..
+ls
+cd Platformer_Data/
+ls
+cd ..
+ls
+rm -r Windows/
+ls
+cd ..
+ls
+git add Windows/*
+git add -f Windows/*
+git commit -m"Builds"
+git reset --soft HEAD~1
+git status
+ls
+cd Windows/
+ls
+git add Platformer.exe Platformer_Data/* UnityPlayer.dll 
+git add -f Platformer.exe Platformer_Data/* UnityPlayer.dll 
+git commit -m"Updated windows build"
+git push
+ls
+cd ..
+git rm Windows/Windows/*
+git commit -m"Deleted extra Windows folder"
+git push
+ls
+git rm Windows/MonoBleedingEdge/*
+git commit -m"Deleted MonoBleedingEdge folder"
+git push
+cd holbertonschool-interview/
+mkdir 0x07-linked_list_cycle
+cd 0x07-linked_list_cycle/
+touch README.md 0-check_cycle.c lists.h
+emacs README.md 
+emacs lists.h 
+emacs 0-check_cycle.c 
+betty 0-check_cycle.c
+chmod u+x 0-check_cycle.c
+git add 0-check_cycle.c README.md lists.h
+git commit -m"Checks if linked list has cycle in it"
+git push
+cd holbertonschool-interview/
+mkdir 0x08-palindrome_integer && cd 0x08-palindrome_integer
+ls
+touch README.md 0-is_palindrome.c palindrome.h
+emacs README.md 
+emacs 0-is_palindrome.c 
+emacs palindrome.h 
+chmod u+x *
+git add README.md
+git commit -m"Readme updated"
+git add palindrome.h 0-is_palindrome.c
+git commit -m"Function that checks is # input is palindrome"
+git push
+cd holbertonschool-interview/
+mkdir 0x0A-slide_line
+cd 0x0A-slide_line/
+touch README.md 0-slide_line.c slide_line.h
+emacs README.md 
+emacs 0-slide_line.c 
+emacs slide_line.h 
+emacs 0-slide_line.c 
+betty 0-slide_line.c
+git add 0-slide_line.c slide_line.h README.md
+git commit -m"function that slides and merges an array of integers"
+git push
+emacs 0-main.c
+gcc -Wall -Wextra -Werror -pedantic -o 0-slide_line 0-main.c 0-slide_line.c
+emacs 0-slide_line.c
+gcc -Wall -Wextra -Werror -pedantic -o 0-slide_line 0-main.c 0-slide_line.c
+./0-slide_line 
+git add 0-slide_line
+git commit -m"Betty check"
+git push
+emacs 0-slide_line
+emacs 0-slide_line.c
+emacs slide_line.h
+gcc -Wall -Wextra -Werror -pedantic -o 0-slide_line 0-main.c 0-slide_line.c
+./0-slide_line 
+betty 0-slide_line
+betty 0-slide_line.c
+betty slide_line.h
+git add 0-slide_line.h
+git commit -m"Betty check"
+emacs 0-slide_line.c
+git add 0-slide_line.c
+git commit -m"typo fix"
+git push
+git pull
+ls
+rm 0-slide_line
+git pull
+cd holbertonschool-interview/
+mkdir 0x0B-menger
+cd 0x0B-menger/
+touch README.md 0-menger.c menger.h
+emacs README.md 
+emacs 0-menger.c 
+emacs menger.h 
+betty 0-menger.c
+git add README.md 0-menger.c menger.h
+git comitt -m"function that draws a 2D Menger Sponge"
+git push
+git commit -m"function that draws a 2D Menger Sponge"
+git push
+ls
+cd holbertonschool-interview/
+mkdir 0x0C-nqueens
+touch README.md 0-nqueens.py
+chmod u+x 0-nqueens.py
+ls
+mv 0-nqueens.py 0x0C-nqueens/
+ls
+emacs README.md 
+git add README.md 
+git commit -m"Updated"
+git push
+cd 0x0C-nqueens/
+ls
+touch README.md
+cd 0-nqueens.py 
+emacs 0-nqueens.py 
+emacs README.md 
+git add 0-nqueens.py README.md
+git commit -m"N queens puzzle is the challenge of placing N non-attacking queens on an N×N chessboard. Write a program that solves the N queens problem."
+git push
+cd holbertonschool-interview/0x0C-nqueens/
+pep8 0-nqueens.py
+emacs 0-nqueens.py
+pep8 0-nqueens.py
+git add 0-nqueens.py
+git commit -m "Pep8 fix"
+git push
+cd holbertonschool-interview/
+mkdir 0x0D-sorted_array_to_avl
+cd 0x0D-sorted_array_to_avl/
+touch README.md 0-sorted_array_to_avl.c
+emacs 0-sorted_array_to_avl.c 
+emacs binary_trees.h
+emacs README.md 
+emacs README.md 
+betty 0-sorted_array_to_avl.c
+emacs 0-sorted_array_to_avl.c
+betty 0-sorted_array_to_avl.c
+git add 0-sorted_array_to_avl.c README.md binary_trees.h 
+git commit -m"function that builds an AVL tree from an array"
+git push
+chmod u+x 0-sorted_array_to_avl.c
+ls
+git add 0-sorted_array_to_avl.c
+git commit -m"chmod file"
+git push
+emacs 0-main.c
+gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 0-main.c 0-sorted_array_to_avl.c -o 0-sorted_array_to_avl
+emacs binary_tree_print.c
+gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 0-main.c 0-sorted_array_to_avl.c -o 0-sorted_array_to_avl
+emacs 0-sorted_array_to_avl.c
+emacs 0-sorted_array_to_avl.c
+gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 0-main.c 0-sorted_array_to_avl.c -o 0-sorted_array_to_avl
+emacs 0-sorted_array_to_avl.c
+gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 0-main.c 0-sorted_array_to_avl.c -o 0-sorted_array_to_avl
+emacs 0-sorted_array_to_avl.c
+gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 0-main.c 0-sorted_array_to_avl.c -o 0-sorted_array_to_avl
+emacs 0-sorted_array_to_avl.c
+gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 0-main.c 0-sorted_array_to_avl.c -o 0-sorted_array_to_avl
+./0-sorted_array_to_avl
+git add 0-sorted_array_to_avl.c
+git commit -m"FIX typo"
+git push
+/Volumes/Untitled/.fseventsd/0000000009c4e6f3 ; exit;
+kill "Touch Bar agent"
+kill all control strip
